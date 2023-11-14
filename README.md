@@ -1,14 +1,18 @@
-# Welcome to your CDK TypeScript project
+# Simple redirect to an URL with Cloudfront and Lambda function
 
-This is a blank project for CDK development with TypeScript.
+Change the values in [the deploy file](./bin/s3-redirect-route53.ts):
+  - domainNames: ['example.com', `example.ch`],
+  - redirectUrl: 'https://some.full.url/with/complex/path?andQuery=params',
+  - subdomain: 'tiny'
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+will redirect `tiny.example.com` and `tiny.example.ch` to `https://some.full.url/with/complex/path?andQuery=params`. Only one certificate will be created using the first domain but with the corresponding SANs
 
-## Useful commands
+### Get started
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk synth`       emits the synthesized CloudFormation template
+```
+yarn
+cdk bootstrap
+cdk deploy
+```
+
+NB: it only deploys in `us-east-1` due to functions used and certificate validation but it could be possible to fiddle with the regions and have cross region.
