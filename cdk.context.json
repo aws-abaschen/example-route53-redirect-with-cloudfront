@@ -1,0 +1,14 @@
+{
+  "hosted-zone:account=337366777972:domainName=abaschen.people.aws.dev:region=eu-west-1": {
+    "Id": "/hostedzone/Z10329381Y4IHMZQTFEW1",
+    "Name": "abaschen.people.aws.dev."
+  },
+  "hosted-zone:account=337366777972:domainName=abaschen.people.aws.dev:region=us-east-1": {
+    "Id": "/hostedzone/Z10329381Y4IHMZQTFEW1",
+    "Name": "abaschen.people.aws.dev."
+  },
+  "hosted-zone:account=337366777972:domainName=aws.baschen.is:region=us-east-1": {
+    "Id": "/hostedzone/Z09184001G2SZKP771D4E",
+    "Name": "aws.baschen.is."
+  }
+}
