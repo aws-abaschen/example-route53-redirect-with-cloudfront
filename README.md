@@ -1,9 +1,12 @@
 # Simple redirect to an URL with Cloudfront and Lambda function
 
 Change the values in [the deploy file](./bin/s3-redirect-route53.ts):
-  - domainNames: ['example.com', `example.ch`],
-  - redirectUrl: 'https://some.full.url/with/complex/path?andQuery=params',
-  - subdomain: 'tiny'
+
+```typescript
+    domainNames: ['example.com', 'example.ch'],
+    redirectUrl: 'https://some.full.url/with/complex/path?andQuery=params',
+    subdomain: 'tiny'
+```
 
 will redirect `tiny.example.com` and `tiny.example.ch` to `https://some.full.url/with/complex/path?andQuery=params`. Only one certificate will be created using the first domain but with the corresponding SANs
 
